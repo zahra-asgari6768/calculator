@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Calc</title>
+        <style>
+            *{
+                padding: 0;
+                margin: 0;
+            }
+            body,html{
+                height: 100%;
+            }
+            form{
+                background:#666769;
+                width: 250px;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50% , -50%);
+                position: relative;
+                border-radius: 10px;
+
+            }
+            input[name="display"]{
+                height: 40px;
+                margin: 5px;
+                border-radius: 8px;
+                width: calc(100% - 30px);
+                border: none;
+                padding: 10px;
+                text-align: right;
+                background: #dfdfdf;
+            }
+            input[type="button"]{
+                float: left;
+                height: 36px;
+                width: calc(100% / 4 - 6.5px);
+                border-radius: 8px;
+                margin: 0 0 5px 5px;
+                text-align: center;
+            }
+            input[type="button"]:nth-last-of-type(1){
+                background: #d49f18;
+                width: calc(50% - 7px);
+        
+            }
+            input[type="button"]:hover{
+                background: #b5b9bb ;
+               border: 1px solid #dbdbdb ;
+            }
+        </style>
+        <script>
+            function data(val){
+                calc.display.value += val
+            }
+            function ac(){
+                calc.display.value = ""
+            }
+            function c() {
+                 calc.display.value = calc.display.value.slice ( 0 , -1)
+            }
+            function equal(){
+                calc.display.value = eval(calc.display.value)
+            }
+        </script>
+    </head>
+    <body>
+        <form name="calc">
+            <input type="text" name="display" value="" disabled/>
+            <input type="button" value="AC" onclick="ac()">
+            <input type="button" value="C"  onclick="c()">
+            <input type="button" value="%" onclick="data(this.value)">
+            <input type="button" value="-" onclick="data(this.value)">
+            <input type="button" value="9" onclick="data(this.value)">
+            <input type="button" value="8" onclick="data(this.value)">
+            <input type="button" value="7" onclick="data(this.value)">
+            <input type="button" value="*" onclick="data(this.value)">
+            <input type="button" value="6" onclick="data(this.value)">
+            <input type="button" value="5" onclick="data(this.value)">
+            <input type="button" value="4" onclick="data(this.value)">
+            <input type="button" value="/" onclick="data(this.value)">
+            <input type="button" value="3" onclick="data(this.value)">
+            <input type="button" value="2" onclick="data(this.value)">
+            <input type="button" value="1" onclick="data(this.value)">
+            <input type="button" value="+" onclick="data(this.value)">
+            <input type="button" value="0" onclick="data(this.value)">
+            <input type="button" value="." onclick="data(this.value)">
+            <input type="button" value="=" onclick="equal()">
+             <div style="clear: both;"></div>
+        </form>
+    </body>
+</html>
